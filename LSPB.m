@@ -67,7 +67,6 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
                 qd(i) = subs(qd(i),t,time);
                 vd(i) = subs(vd(i),t,time);
                 ad(i) = subs(ad(i),t,time);
-                ad(i)
                 tk = time;
             end
             if time > tb + t_IF(1) && time<=(t_IF(3)-tb)
