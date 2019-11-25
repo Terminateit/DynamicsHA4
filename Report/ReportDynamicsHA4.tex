@@ -368,7 +368,7 @@ Let me compare different approaches that I used in both tasks.
  $TRAPEZOIDAL_1$ & 0 & 2 & -4 & 4\\
  $\dot{q}(t) = a(b + sin(ct))$ & 0 & 2.3 & -3.7 & 3.7\\
  $POLYNOMIAL_2$ & -1.6 & 1 & -2.3 & 2.1\\
- $TRAPEZOIDAL_2$ & -0.3 & 5.4 & 0 & 11.4\\
+ $TRAPEZOIDAL_2$ & -1.3 & 0.6 & -2.6 & 2.6\\
  $SPLINE$ & -2.7 & 1.5 & -6.2 & 4.6\\
  \hline
 \end{tabular}
@@ -376,7 +376,7 @@ Let me compare different approaches that I used in both tasks.
 \label{table:1}
 \end{table}
  
- As I concluded, with bigger amount of constraints trapezoidal velocity profile is unsufficient and enegry expensive (see \ref{table:1}). Spline also makes robot move too fast what can affect on energy efficiency. Polynomial ones give smooth enough result and low energy consumption. And for me, it was not so understandable to obrain quite awesome trajectory for $TRAPEZOIDAL_2$, because it was difficult to satisfy all the constraints.
+ As I concluded, with bigger amount of constraints spline is more unsufficient and enegry expensive than other methods (see \ref{table:1}). Sine law also makes robot move too fast what can affect on energy efficiency. Polynomial ones give smooth enough result and low energy consumption. Also, spline has fast changing for jerk, that can damage the construction.
  
 
 \end{document}
