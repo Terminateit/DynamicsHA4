@@ -1,0 +1,10 @@
+\contentsline {section}{\numberline {}Code}{2}{section*.2}
+\contentsline {section}{\numberline {}Task1}{2}{section*.3}
+\contentsline {subsection}{\numberline {}Polynomial position profile}{2}{section*.4}
+\contentsline {subsection}{\numberline {}Trapezoidal Velocity Profile}{4}{section*.6}
+\contentsline {subsection}{\numberline {}Velocity profile of the type $\mathaccentV {dot}839{q}(t) = a(b + sin(ct))$}{6}{section*.9}
+\contentsline {section}{\numberline {}Task2}{7}{section*.11}
+\contentsline {subsection}{\numberline {}Polynomial position profile}{7}{section*.12}
+\contentsline {subsection}{\numberline {}Trapezoidal Velocity Profile}{8}{section*.14}
+\contentsline {subsection}{\numberline {}Splines}{9}{section*.16}
+\contentsline {section}{\numberline {}Results}{10}{section*.18}
