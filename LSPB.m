@@ -62,7 +62,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
 
             if time>=t_IF(1) && time<=tb + t_IF(1)
                 i = i+1;
-                [qd(i),vd(i),ad(i)] = Polynomial(t_b,q_b, qdot_b, [qdotdot_IF(1) 0], 21);
+                [qd(i),vd(i),ad(i)] = Polynomial(t_b,q_b, qdot_b, [qdotdot_IF(1) 0], 2);
                 qd_tb = subs(qd(i),t,time);
                 qd(i) = subs(qd(i),t,time);
                 vd(i) = subs(vd(i),t,time);
@@ -81,7 +81,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
             end
             if time >(t_IF(3)-tb) && time<=t_IF(3)
                 i = i+1;
-                [qd(i),vd(i),ad(i)] = Polynomial(t_f,q_f, qdot_f,[0 qdotdot_IF(2)], 24);
+                [qd(i),vd(i),ad(i)] = Polynomial(t_f,q_f, qdot_f,[0 qdotdot_IF(2)], 21);
                 qd(i) = subs(qd(i),t,time);
                 vd(i) = subs(vd(i),t,time);
                 ad(i) = subs(ad(i),t,time);
@@ -119,7 +119,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
                 end
                 if time >(t_IF(2)-tb) && time<=t_IF(2)
                     i = i+1;
-                    [qd(i),vd(i),ad(i)] = Polynomial(t_f,q_f, qdot_f,[0 qdotdot_IF(2)], 22);
+                    [qd(i),vd(i),ad(i)] = Polynomial(t_f,q_f, qdot_f,[0 qdotdot_IF(2)], 2);
                     qd(i) = subs(qd(i),t,time);
                     vd(i) = subs(vd(i),t,time);
                     ad(i) = subs(ad(i),t,time);
