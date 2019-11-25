@@ -54,7 +54,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
         t_b = [t_IF(1) tb+t_IF(1) t_IF(3)];
         q_b = [q_IF(1) 0 q_IF(3)];
         % Calculate V
-        V = sign(q_IF(3)-q_IF(1))*V_solve(tb,t_IF,q_IF, qdot_IF);
+        V = V_solve(tb,[t_IF(1) t_IF(3)] ,[q_IF(1)  q_IF(3)], qdot_IF);
         qdot_b = [qdot_IF(1) V];
         k = 0.05;
         i = 0;
@@ -67,6 +67,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
                 qd(i) = subs(qd(i),t,time);
                 vd(i) = subs(vd(i),t,time);
                 ad(i) = subs(ad(i),t,time);
+                ad(i)
                 tk = time;
             end
             if time > tb + t_IF(1) && time<=(t_IF(3)-tb)
@@ -96,7 +97,7 @@ function [qd,vd,ad,n,k] = LSPB(t_IF,q_IF, qdot_IF, qdotdot_IF, trap)
                 t_b = [t_IF(3) tb+t_IF(3) t_IF(3)];
                 q_b = [q_IF(3) 0 q_IF(3)];
                 % Calculate V
-                V = sign(q_IF(2)-q_IF(3))*V_solve(tb,t_IF,q_IF, qdot_IF);
+                V = V_solve(tb,[t_IF(3) t_IF(2)] ,[q_IF(3)  q_IF(2)], qdot_IF);
                 qdot_b = [qdot_IF(1) V];
                 if time>t_IF(3) && time<=tb + t_IF(3)
                     i = i+1;
