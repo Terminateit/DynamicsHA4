@@ -7,9 +7,10 @@ function [qd,vd,ad,n,k] = Spline(t_IF,q_IF, qdot_IF, qdotdot_IF)
         [qdot_IF(1) qdot_IF(2)], qdotdot_IF, 31);
         qds = subs(qd1,t,t_IF(3));
         vds = subs(vd1,t,t_IF(3));
+        accs = subs(ad1,t,t_IF(3));
     [qd2,vd2,ad2] = Polynomial([t_IF(3) t_IF(2) t_IF(1)], ... 
         [qds q_IF(2) q_IF(1)],  ...
-        [vds qdot_IF(2)], qdotdot_IF, 42);
+        [vds qdot_IF(2)],[accs qdotdot_IF(2)], 5);
     for time = t_IF(1):k:t_IF(2)
         if time>=t_IF(1) && time<=t_IF(3)
             i = i+1;
